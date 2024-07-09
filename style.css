@@ -1,0 +1,203 @@
+body {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    background-color: #030007;
+  }
+  button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  #header {
+    padding: 10px;
+    color: #7F96FF;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+  #header button {
+    background-color:#92a1d1;
+  }
+  #container {
+    width: 770px;
+  }
+  #weekdays {
+    width: 100%;
+    display: flex;
+    color: #8a77c7;
+  }
+  #weekdays div {
+    width: 100px;
+    padding: 10px;
+  }
+  #calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #9893DA;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #b325b6e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .day:hover {
+    background-color: #B8E1FF;
+  }
+  
+  .day + #currentDay {
+    background-color:#F5E4D7;
+  }
+  .event {
+    font-size: 10px;
+    padding: 3px;
+    background-color: #df58e4;
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+  }
+  .padding {
+    cursor: default !important;
+    background-color: #9893DA !important;
+    box-shadow: none !important;
+  }
+  #newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: #F5E4D7;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+  }
+  #eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px rgb(78, 77, 77);
+  }
+  #eventTitleInput.error {
+    border: 2px solid #c777bc
+  }
+  #cancelButton, #deleteButton {
+    background-color: #e92727;
+  }
+  #saveButton, #closeButton {
+    background-color: #5a78da;
+  }
+  #eventText {
+    font-size: 14px;
+  }
+  #modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+  }
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #header {
+      flex-direction: column;
+      align-items: center;
+      font-size: 18px;
+    }
+  
+    #header button {
+      margin-top: 10px;
+      width: 80px;
+      font-size: 14px;
+    }
+  
+    #weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 12px;
+      text-align: center;
+    }
+  
+    #weekdays div {
+      padding: 5px;
+      box-sizing: border-box;
+    }
+  
+    #calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .day {
+      height: 60px; /* Reduced height for mobile */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 10px;
+      box-sizing: border-box;
+      background-color: #9893DA;
+      margin: 0; /* Removed margin to use gap from grid */
+      padding: 5px;
+      box-shadow: 0px 0px 3px #b325b6e0;
+    }
+  
+    .day:hover {
+      background-color: #B8E1FF;
+    }
+  
+    #newEventModal, #deleteEventModal {
+      width: 90%;
+      left: 5%;
+      top: 50px;
+      font-size: 14px;
+    }
+  
+    #eventTitleInput {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+  
+    #saveButton, #cancelButton, #deleteButton, #closeButton {
+      font-size: 14px;
+    }
+  }
+  
+  
